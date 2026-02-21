@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: "en" }}">
+    {%- include head.html -%}
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+    <script src="{{ '/assets/js/cover.js' | relative_url }}"></script>
+    <body>
+    <div class="top-bar">
+        <a class="top-btn" href="https://github.com/codeuzhub/ml-books" target="_blank" aria-label="Star on GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            star
+        </a>
+        <button class="top-btn" id="theme-toggle" aria-label="Toggle theme">[ dark ]</button>
+    </div>
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <div class="overlay" onclick="closeCover(this)">
+                <img id="cover-preview" src="" alt="Cover preview"/>
+            </div>
+            {{ content }}
+        </div>
+    </main>
+    </body>
+</html>

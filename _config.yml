@@ -1,0 +1,6 @@
+theme: no-style-please
+
+title: ML Books
+description: A curated collection of freely available machine learning books.
+baseurl: /ml-books
+url: https://codeuzhub.github.io

@@ -1,0 +1,108 @@
+:root {
+  --bg: #fff;
+  --text: #111;
+  --text-secondary: #444;
+  --text-muted: #666;
+  --border: #eee;
+  --shadow: rgba(0,0,0,0.15);
+  --link: #111;
+}
+
+[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --text: #ddd;
+  --text-secondary: #aaa;
+  --text-muted: #888;
+  --border: #333;
+  --shadow: rgba(0,0,0,0.4);
+  --link: #ddd;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 1.4;
+  transition: background 0.3s, color 0.3s;
+}
+
+a { color: var(--link); }
+
+.wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.top-bar {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 998;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.top-btn {
+  background: none;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.3s, border-color 0.3s;
+}
+.top-btn:hover { color: var(--text); border-color: var(--text); text-decoration: none; }
+
+table, th, td { border: none !important; }
+td { padding: 1rem 0.8rem !important; vertical-align: top; }
+td img {
+  box-shadow: 0 1px 4px var(--shadow);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+td img:hover { transform: scale(1.05); }
+tr + tr td { border-top: 1px solid var(--border) !important; }
+td strong a { font-size: 1.1em; display: inline-block; margin-bottom: 0.5em; text-decoration: none; color: var(--link); }
+td strong a:hover { text-decoration: underline; }
+td .author { font-size: 0.85em; color: var(--text-secondary); display: inline-block; margin-bottom: 0.4em; }
+td sub { font-size: 0.75em; color: var(--text-muted); }
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+.overlay.active {
+  background: rgba(0,0,0,0.7);
+  pointer-events: auto;
+}
+.overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  border-radius: 4px;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.overlay.active img {
+  transform: scale(1);
+  opacity: 1;
+}
